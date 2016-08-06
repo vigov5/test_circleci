@@ -2,14 +2,11 @@ debug: true
 
 build:
   image: python
-  environment:
-    - TEST_KEY="$(cat ~/.ssh/id_rsa)"
   commands:
     - ls -la /
     - ls -la /drone
     - pwd
     - ls -la
-    - echo $TEST_KEY
 
 deploy:
   ssh:
