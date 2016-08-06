@@ -4,11 +4,11 @@ build:
     - python setup.py install
     - python setup.py test
 
-  deploy:
-    ssh:
-      host: 188.166.218.1
-      user: deploy
-      port: 22
-      commands:
-        - touch hello
-        - touch world
+deploy:
+  ssh:
+    host: 188.166.218.1
+    user: deploy
+    port: 22
+    commands:
+      - touch hello
+      - touch world
