@@ -1,3 +1,5 @@
+debug: true
+
 build:
   image: python
   environment:
@@ -11,9 +13,12 @@ build:
 
 deploy:
   ssh:
+    image: vigov5/drone-ssh-plus
     host: 188.166.218.1
     user: deploy
     port: 22
+    pre_commands:
+      - whoami
     commands:
       - ./deploy.sh
       - touch world
