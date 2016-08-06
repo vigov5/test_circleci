@@ -1,7 +1,7 @@
 build:
   image: python
   environment:
-    TEST_KEY="$(cat ~/.ssh/id_rsa)"
+    - TEST_KEY="$(cat ~/.ssh/id_rsa)"
   commands:
     - python setup.py install
     - python setup.py test
