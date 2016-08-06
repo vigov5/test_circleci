@@ -1,0 +1,4 @@
+build:
+  image: python
+  commands:
+    - python setup.py test
