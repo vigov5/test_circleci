@@ -3,15 +3,14 @@ build:
   commands:
     - python setup.py install
     - python setup.py test
-
-deploy:
-  commands:
-    - touch test.sh
-    - scp test.sh deploy@188.166.218.1:~
-  ssh:
-    host: 188.166.218.1
-    user: deploy
-    port: 22
+  deploy:
     commands:
-      - echo hello
-      - echo world
+      - touch test.sh
+      - scp test.sh deploy@188.166.218.1:~
+    ssh:
+      host: 188.166.218.1
+      user: deploy
+      port: 22
+      commands:
+        - echo hello
+        - echo world
