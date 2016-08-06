@@ -1,4 +1,5 @@
 build:
   image: python
   commands:
+    - python setup.py install
     - python setup.py test
