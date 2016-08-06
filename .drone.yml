@@ -19,6 +19,7 @@ deploy:
     port: 22
     pre_commands:
       - whoami
+      - ls -la
     commands:
       - ./deploy.sh
       - touch world
