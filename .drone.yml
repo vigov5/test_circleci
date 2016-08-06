@@ -3,11 +3,10 @@ build:
   environment:
     - TEST_KEY="$(cat ~/.ssh/id_rsa)"
   commands:
-    - python setup.py install
-    - python setup.py test
+    - ls -la /
+    - ls -la /drone
     - pwd
     - ls -la
-    - ls -la ~/.ssh
     - echo $TEST_KEY
 
 deploy:
