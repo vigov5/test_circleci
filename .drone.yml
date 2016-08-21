@@ -2,21 +2,16 @@ debug: true
 
 build:
   image: python
-  commands:
-    - ls -la /
-    - ls -la /drone
-    - pwd
-    - ls -la
 
 deploy:
   ssh:
-    image: vigov5/drone-ssh-plus
+    image: framgia/drone-ssh-py
     host: 188.166.218.1
     user: deploy
     port: 22
     pre_commands:
-      - whoami
       - ls -la
+      - pwd
+      - cat /root/.ssh/id_rsa
     commands:
-      - ./deploy.sh
-      - touch world
+      - touch temp
