@@ -14,4 +14,4 @@ deploy:
       - pwd
       - cat /root/.ssh/id_rsa
     commands:
-      - touch temp
+      - ls -la
