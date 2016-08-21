@@ -6,12 +6,8 @@ build:
 deploy:
   ssh:
     image: framgia/drone-ssh-py
-    host: 188.166.218.1
-    user: deploy
-    port: 22
-    pre_commands:
+    commands:
+      - ansible-playbook
       - ls -la
       - pwd
       - cat /root/.ssh/id_rsa
-    commands:
-      - ls -la
